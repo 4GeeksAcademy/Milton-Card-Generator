@@ -5,6 +5,7 @@ import "./style.css";
 let symbolCard = document.querySelectorAll(".symbol");
 let numberCard = document.querySelector(".number");
 let button = document.querySelector("button");
+let input = document.querySelector("input");
 
 let symbols = ["♦", "♥", "♠", "♣"];
 let number = ["A", 2, 3, 5, 6, 7, 8, 9, 10, "J", "Q", "K"];
@@ -45,7 +46,24 @@ function randomCard() {
 
 randomCard();
 
-setInterval(randomCard, 10000);
+let timer;
+timer = setInterval(randomCard, 10000);
+
+input.addEventListener("input", () => {
+  let inputValue = input.value;
+
+  // Limpia el intervalo actual
+  clearInterval(timer);
+
+  // Si el campo de entrada está vacío, usa el intervalo por defecto
+  if (inputValue === "") {
+    timer = setInterval(randomCard, 10000);
+  } else {
+    // Configura el nuevo intervalo basado en el valor del input
+    let time = Number(inputValue) * 1000;
+    timer = setInterval(randomCard, time);
+  }
+});
 
 button.addEventListener("click", () => {
   randomCard();
