@@ -45,6 +45,8 @@ function randomCard() {
 
 randomCard();
 
+setInterval(randomCard, 10000);
+
 button.addEventListener("click", () => {
   randomCard();
 });
