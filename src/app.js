@@ -17,7 +17,7 @@ function randomGenerator(arr) {
 }
 
 function randomCard() {
-  let randomSymbol = randomGenerator(symbols); // simbolo random
+  let randomSymbol = randomGenerator(symbols);
   let randomNumber = randomGenerator(number);
   for (let i = 0; i < symbolCard.length; i++) {
     if (randomSymbol === "♥" || randomSymbol === "♦") {
@@ -51,15 +51,11 @@ timer = setInterval(randomCard, 10000);
 
 input.addEventListener("input", () => {
   let inputValue = input.value;
-
-  // Limpia el intervalo actual
   clearInterval(timer);
 
-  // Si el campo de entrada está vacío, usa el intervalo por defecto
   if (inputValue === "") {
     timer = setInterval(randomCard, 10000);
   } else {
-    // Configura el nuevo intervalo basado en el valor del input
     let time = Number(inputValue) * 1000;
     timer = setInterval(randomCard, time);
   }
