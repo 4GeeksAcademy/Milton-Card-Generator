@@ -9,7 +9,7 @@ body {
   height: 100vh;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
+  gap: 20px;
 }
 
 .card {
@@ -20,7 +20,7 @@ body {
 }
 
 .number {
-  height: 80%;
+  height: 100%;
   font-size: 100px;
 }
 
