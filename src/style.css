@@ -14,25 +14,22 @@ body {
 
 .card {
   background-color: white;
-  color: rgb(43, 43, 43);
+  color: rgb(70, 70, 70);
   height: 600px;
   border-radius: 20px;
+  padding: 10px;
 }
 
 .number {
   height: 100%;
-  font-size: 100px;
+  font-size: 150px;
 }
 
 .symbol {
   font-size: 120px;
-  padding: 0 10px;
+  height: 100px;
 }
 
 .red {
   color: rgb(253, 69, 69);
-}
-
-.black {
-  color: rgb(43, 43, 43);
 }

@@ -22,26 +22,14 @@ function randomCard() {
   for (let i = 0; i < symbolCard.length; i++) {
     if (randomSymbol === "♥" || randomSymbol === "♦") {
       symbolCard[i].classList.add("red");
-      symbolCard[i].classList.remove("black");
     } else {
       symbolCard[i].classList.remove("red");
-      symbolCard[i].classList.add("black");
     }
   }
-  if (randomNumber === "A") {
-    randomSymbol = "";
-    numberCard.textContent = "♥";
-    numberCard.style.fontSize = "300px";
-    symbolCard.forEach(item => (item.textContent = randomSymbol));
-    numberCard.style.color = "rgb(253, 69, 69)";
-  } else {
-    numberCard.style.fontSize = "100px";
-    numberCard.style.color = "rgb(43, 43, 43)";
-    symbolCard.forEach(item => {
-      item.textContent = randomSymbol;
-    });
-    numberCard.textContent = randomNumber;
-  }
+  symbolCard.forEach(item => {
+    item.textContent = randomSymbol;
+  });
+  numberCard.textContent = randomNumber;
 }
 
 randomCard();
